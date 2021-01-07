@@ -74,7 +74,7 @@ class Account(object):
         }
 
         r = requests.get(
-            "https://moa.optusnet.com.au/myoptus/api/services/"+self.number+"/addons",
+            "https://moa.optusnet.com.au/myoptus/api/services/" + self.number+"/addons",
             headers=headers
         )
 
