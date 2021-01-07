@@ -1,7 +1,5 @@
-import json
-import logging
 import requests
-import time
+
 
 defaultHeaders = {
     "Accept": "application/json",
@@ -68,7 +66,7 @@ class Account(object):
             return r.json()
 
     def addons(self):
-        
+
         self.__acquireToken()
 
         headers = {
@@ -107,7 +105,7 @@ class Account(object):
 
     def __acquireToken(self):
         
-        if self.token == None:
+        if self.token is None:
             # No existing token exists so refreshing library
             self.auth()
         else:
