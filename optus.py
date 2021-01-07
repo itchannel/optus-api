@@ -9,17 +9,16 @@ defaultHeaders = {
 
 
 class Account(object):
-    
-    def __init__(self, username, password, number ):
+
+    def __init__(self, username, password, number):
         self.username = username
         self.password = password
         self.number = number
-        self.token = Noneye
+        self.token = None
         self.expires = None
         self.expiresAt = None
         self.refresh_token = None
         self.saveToken = False
-
 
     def auth(self):
 
@@ -56,7 +55,6 @@ class Account(object):
 
         }
 
-
         r = requests.get(
             "https://moa.optusnet.com.au/myoptus/api/usages/v2/serviceid/" + self.number,
             headers=headers
@@ -75,7 +73,6 @@ class Account(object):
 
         }
 
-
         r = requests.get(
             "https://moa.optusnet.com.au/myoptus/api/services/"+self.number+"/addons",
             headers=headers
@@ -93,7 +90,6 @@ class Account(object):
 
         }
 
-
         r = requests.get(
             "https://moa.optusnet.com.au/myoptus/api/geofence/fencelist/v2",
             headers=headers
@@ -101,14 +97,13 @@ class Account(object):
 
         if r.status_code == 200:
             return r.json()
-     
 
     def __acquireToken(self):
-        
+   
         if self.token is None:
             # No existing token exists so refreshing library
             self.auth()
         else:
-            logging.info("Token is valid, continuing")
+            # logging.info("Token is valid, continuing")
             pass
 
