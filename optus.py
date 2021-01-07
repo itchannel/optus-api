@@ -99,11 +99,10 @@ class Account(object):
             return r.json()
 
     def __acquireToken(self):
-   
+
         if self.token is None:
             # No existing token exists so refreshing library
             self.auth()
         else:
             # logging.info("Token is valid, continuing")
             pass
-
