@@ -16,7 +16,7 @@ class Account(object):
         self.username = username
         self.password = password
         self.number = number
-        self.token = None
+        self.token = Noneye
         self.expires = None
         self.expiresAt = None
         self.refresh_token = None
