@@ -10,7 +10,7 @@ setup(
     author_email="steve@itchannel.me",
     description="Python wrapper for the optus mobile API",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type='text/markdown',
     url="https://github.com/itchannel/optus-api",
     license="MIT",
     packages=['optus'],

@@ -18,25 +18,22 @@ Install using pip:
 pip install optus
 ```
 
+
 ## Demo
 To test the script there is a demo script that can be used
 ```
 demo.py EMAIL PASSWORD MOBILE
 ```
 
-e.g.
+Example
 ```
 demo.py test@test.com password1 04123456
 ```
 
-
 ## Library Usage
-
 Simple Usage
-``` 
+```
 from optus import Account
-
 acc = Account("email", "password", "mobile")
-
 print(acc.usage())
 ```
