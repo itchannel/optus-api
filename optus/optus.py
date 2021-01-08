@@ -38,11 +38,13 @@ class Account(object):
             data=data,
             headers=headers
         )
+        
+        if r.status_code == 400:
+            raise Exception("Incorrect Credentials")
 
         if r.status_code == 200:
             result = r.json()
             self.token = result["access_token"]
-
             return True
 
     def usage(self):
@@ -59,7 +61,8 @@ class Account(object):
             "https://moa.optusnet.com.au/myoptus/api/usages/v2/serviceid/" + self.number,
             headers=headers
         )
-
+        if r.status_code == 401:
+            raise Exception(r.text)
         if r.status_code == 200:
             return r.json()
 
